@@ -1,0 +1,48 @@
+.star-half-filled {
+    color: #f8ce0b;
+    font-size: 1.2em;
+    margin-right: 3px;
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+  }
+  
+  .star-half-filled:before {
+    content: '\2605'; /* Unicode character for a filled star */
+    position: absolute;
+    left: 0;
+    width: 50%;
+    overflow: hidden;
+    color: #ddd;
+  }  
+  .course-card {
+    width: 250px;
+    margin-right: 20px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .course-card:hover {
+    transform: scale(1.05); /* Increase the size on hover */
+  }
+  
+  .rating {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .star-filled,
+  .star-outline {
+    color: #f8ce0b;
+    font-size: 1.2em;
+    margin-right: 3px;
+  }
+  
+  .star-outline {
+    color: #ddd;
+  }
+  
+  .btn-buy {
+    width: 100%;
+  }
+  

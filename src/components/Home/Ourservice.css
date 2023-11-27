@@ -1,0 +1,28 @@
+/* Add this style to your global or component-level stylesheet */
+
+.service-card {
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .service-card:hover {
+    transform: scale(1.05); /* Increase the size on hover */
+  }
+  
+  .service-img {
+    transition: filter 0.3s ease-in-out;
+  }
+  
+  .service-img:hover {
+    filter: brightness(80%); /* Adjust brightness on hover */
+  }
+  
+  .btn-learn-more {
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .btn-learn-more:hover {
+    background-color: #28a745; /* Change background color on hover */
+    border-color: #28a745; /* Change border color on hover */
+    color: #fff; /* Change text color on hover */
+  }
+  
