@@ -9,8 +9,8 @@ const Navbarr = () => {
           <Link className="navbar-brand" to="/">
             Safental.Com
           </Link>
-          <div className="collapse navbar-collapse" id="navbarNav">
-            <ul className="navbar-nav ml-auto">
+          <div className="ml-auto">
+            <ul className="navbar-nav">
               <li className="nav-item">
                 <Link className="nav-link" to="/professionals">
                   Professionals
@@ -27,9 +27,22 @@ const Navbarr = () => {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/login" style={{ color: 'white', background: 'black', borderRadius: '15px' }}>
-                  Login
-                </Link>
+              <Link
+  className="nav-link"
+  to="/login"
+  style={{
+    color: 'white',
+    background: 'black',
+    borderRadius: '15px',
+    textAlign: 'center',
+    transition: 'background-color 0.3s ease', // Add transition effect
+  }}
+  // Hover effect styles
+  onMouseEnter={(e) => (e.target.style.backgroundColor = '#333')}
+  onMouseLeave={(e) => (e.target.style.backgroundColor = 'black')}
+>
+  Login / Registration
+</Link>
               </li>
             </ul>
           </div>

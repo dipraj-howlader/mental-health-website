@@ -1,7 +1,9 @@
+// CarouselHome.js
 import React, { useState, useEffect } from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import './CarouselHome.css'; // Import the CSS file
 
 import image1 from '../../ExampleCarouselImage/1.jpg';
 import image2 from '../../ExampleCarouselImage/2.jpg';
@@ -16,10 +18,10 @@ const CarouselHome = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 10000,
+    autoplaySpeed: 1000,
   };
 
-  const introText = "Find and book the best doctors for you......";
+  const introText = "Find and book the best doctors for you....";
   const [typedText, setTypedText] = useState('');
 
   useEffect(() => {
@@ -35,38 +37,22 @@ const CarouselHome = () => {
     return () => clearInterval(intervalId);
   }, [introText]);
 
-  const introTextStyle = {
-    backgroundColor: '#3498db',
-    color: '#fff',
-    padding: '70px',
-    textAlign: 'center',
-    fontSize: '50px',
-    fontWeight: 'bold',
-  };
-
-  const imageStyle = {
-    width: '90%',
-    height: '300px',
-    margin: 'auto',
-    display: 'block',
-  };
-
   return (
     <div className="mt-4">
-      <h1 style={introTextStyle}>{typedText}</h1>
+      <h1 className="typed-text">{typedText}.</h1>
       <Slider {...settings}>
         {/* Poster Slides */}
         <div>
-          <img src={image1} alt="Poster 1" style={imageStyle} />
+          <img src={image4} alt="Poster 1" className="carousel-image" />
         </div>
         <div>
-          <img src={image2} alt="Poster 2" style={imageStyle} />
+          <img src={image1} alt="Poster 2" className="carousel-image" />
         </div>
         <div>
-          <img src={image3} alt="Poster 3" style={imageStyle} />
+          <img src={image3} alt="Poster 3" className="carousel-image" />
         </div>
         <div>
-          <img src={image4} alt="Poster 4" style={imageStyle} />
+          <img src={image2} alt="Poster 4" className="carousel-image" />
         </div>
       </Slider>
     </div>

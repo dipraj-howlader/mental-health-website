@@ -1,0 +1,63 @@
+/* SimpleLogin.css */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+
+.login-container {
+  margin-top: 50px;
+}
+
+.login-card {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  font-family: 'Roboto', sans-serif;
+}
+
+.login-card h2 {
+  font-size: 2rem;
+  font-weight: 500;
+  margin-bottom: 20px;
+  color: #333; /* Set your desired color */
+}
+
+.form-label {
+  font-size: 1rem;
+  color: #555; /* Set your desired color */
+}
+
+/* Add more custom styling as needed */
+
+.text-center {
+  font-size: 0.9rem;
+  color: #777; /* Set your desired color */
+}
+
+.text-center a {
+  color: #007bff; /* Set your desired color */
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.text-center a:hover {
+  text-decoration: underline;
+}
+
+/* Additional Styles for Registration Form */
+.show-registration .text-center {
+  color: #555; /* Set your desired color */
+}
+
+.show-registration .form-label {
+  color: #555; /* Set your desired color */
+}
+
+.register-link,
+.login-link {
+  color: #007bff; /* Set your desired color */
+  cursor: pointer;
+}
+
+.register-link:hover,
+.login-link:hover {
+  text-decoration: underline;
+}

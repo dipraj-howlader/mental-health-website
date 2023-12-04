@@ -1,0 +1,26 @@
+/* CarouselHome.css */
+.typed-text {
+    /* Initial styles for the typed text */
+    color: #3498db; /* Default text color */
+    background-color: #f2f2f2; /* Background color */
+    padding: 30px; /* Padding around the text */
+    text-align: center; /* Center the text */
+    transition: color 0.3s ease, background-color 0.3s ease, opacity 0.3s ease; /* Add smooth transitions */
+  }
+  
+  .typed-text:hover {
+    /* Hover styles */
+    color: #ffbf00; /* Change text color on hover */
+    background-color: #333; /* Change background color on hover */
+    opacity: 0.8; /* Reduce opacity on hover */
+    cursor: pointer; /* Change the cursor to a pointer on hover */
+  }
+  
+  .carousel-image {
+    /* Additional styles for the carousel images if needed */
+    width: 90%;
+    height: 300px;
+    margin: auto;
+    display: block;
+  }
+  

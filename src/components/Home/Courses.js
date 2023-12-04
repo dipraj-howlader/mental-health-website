@@ -1,6 +1,10 @@
 import React from 'react';
 import './Courses.css';
 
+// Import images
+import image1 from '../../images/1.jpg';
+import image2 from '../../images/2.jpg';
+
 const Courses = () => {
   // Sample course data
   const courses = [
@@ -9,14 +13,14 @@ const Courses = () => {
       name: 'Course 1',
       price: '$19.99',
       rating: 4.5,
-      image: '../../images/Relationship-_-Intimacy-Training-700x430_20OFF-2-480x304.jpg',
+      image: image1,
     },
     {
       id: 2,
       name: 'Course 2',
       price: '$29.99',
       rating: 3.8,
-      image: '../../images/Phycological-Well-Being-700-x-430-480x304.jpg',
+      image: image2,
     }
   ];
 
