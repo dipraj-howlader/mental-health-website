@@ -27,16 +27,16 @@
 
 /* Add more custom styling as needed */
 
-.text-center {
+/* .text-center {
   font-size: 0.9rem;
-  color: #777; /* Set your desired color */
-}
+  color: #777;
+} */
 
-.text-center a {
-  color: #007bff; /* Set your desired color */
+/* .text-center a {
+  color: #007bff; 
   text-decoration: none;
   font-weight: 500;
-}
+} */
 
 .text-center a:hover {
   text-decoration: underline;
