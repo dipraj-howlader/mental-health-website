@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Card, Button, Container, Row, Col, Form } from 'react-bootstrap';
 import './AppointmentList.css'; // Custom CSS file for additional styling
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../../AuthContext';
 import image1 from '../../professionalsImage/1.jpeg';
 import image2 from '../../professionalsImage/2.jpeg';
 import image3 from '../../professionalsImage/3.jpeg';
@@ -13,6 +15,10 @@ import image9 from '../../professionalsImage/9.jpeg';
 
 
 const AppointmentList = () => {
+
+  const { currentUser } = useAuth();
+  const navigate = useNavigate();
+
   const [searchName, setSearchName] = useState('');
   const [searchDepartment, setSearchDepartment] = useState('');
 
@@ -22,55 +28,64 @@ const AppointmentList = () => {
       id: 1,
       name: 'Dr. John Doe',
       specialist: 'Psychiatrist',
-      photo: image1
+      photo: image1,
+      fee: 500
     },
     {
       id: 2,
       name: 'Dr. Jane Smith',
       specialist: 'Clinical Psychologist',
-      photo: image2
+      photo: image2,
+      fee: 1000
     },
     {
       id: 3,
       name: 'Dr. Mark Johnson',
       specialist: 'Counseling Psychologist',
-      photo: image3
+      photo: image3,
+      fee: 1200
     },
     {
       id: 4,
       name: 'Dr. Emily Davis',
       specialist: 'Child Psychologist',
-      photo: image4
+      photo: image4,
+      fee: 1500
     },
     {
       id: 5,
       name: 'Dr. Robert White',
       specialist: 'Neuropsychologist',
-      photo: image5
+      photo: image5,
+      fee: 100
     },
     {
       id: 6,
       name: 'Dr. Sarah Miller',
       specialist: 'Sports Psychologist',
-      photo: image6
+      photo: image6,
+      fee: 100
     },
     {
       id: 7,
       name: 'Dr. Michael Brown',
       specialist: 'Forensic Psychologist',
-      photo: image7
+      photo: image7,
+      fee: 100
     },
     {
       id: 8,
       name: 'Dr. Lisa Taylor',
       specialist: 'Health Psychologist',
-      photo: image8
+      photo: image8,
+      fee: 100
     },
     {
       id: 9,
       name: 'Dr. Kevin Turner',
       specialist: 'Educational Psychologist',
-      photo: image9
+      photo: image9,
+      fee: 100
     },
   ];
   
@@ -85,6 +100,17 @@ const AppointmentList = () => {
   const handleReset = () => {
     setSearchName('');
     setSearchDepartment('');
+  };
+
+  const handleBookAppointment = (professionalData) => {
+    console.log(professionalData)
+    if (currentUser) {
+      // User is logged in, navigate to checkout
+      navigate('/book-appointment', { state: { professionalData } });
+    } else {
+      // User is not logged in, navigate to login and then to checkout
+      navigate('/login');
+    }
   };
 
   return (
@@ -127,7 +153,8 @@ const AppointmentList = () => {
               <Card.Body>
                 <Card.Title>{professional.name}</Card.Title>
                 <Card.Subtitle className="mb-2 text-muted">{professional.specialist}</Card.Subtitle>
-                <Button variant="primary">Book An Appointment</Button>
+                <Button variant="primary" onClick={() => handleBookAppointment(professional)}> Book An Appointment
+                </Button>
               </Card.Body>
             </Card>
           </Col>

@@ -1,10 +1,12 @@
 // SimpleLogin.js
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import { Form, Button, Container, Row, Col } from 'react-bootstrap';
 import './SimpleLogin.css'; // Custom CSS file for additional styling
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../../AuthContext';
+import { Link } from 'react-router-dom';
 
 const firebaseConfig = {
   apiKey: "AIzaSyA-GwYYL6OmcVtvnis68EtCSlJMVePrxAs",
@@ -19,9 +21,13 @@ const firebaseApp = firebase.initializeApp(firebaseConfig);
 const auth = firebaseApp.auth();
 
 const SimpleLogin = () => {
+  const { currentUser } = useAuth();
+  const navigate = useNavigate();
+
   const [loginEmail, setLoginEmail] = useState('');
   const [loginPassword, setLoginPassword] = useState('');
   const [showRegistration, setShowRegistration] = useState(false);
+  const [loginMessage, setLoginMessage] = useState('');
 
   const [registrationData, setRegistrationData] = useState({
     fullName: '',
@@ -34,12 +40,31 @@ const SimpleLogin = () => {
     medicalHistory: '',
     termsAgreement: false,
   });
+  if (!currentUser) {
 
-  const handleLogin = () => {
-    console.log('Login Email:', loginEmail);
-    console.log('Login Password:', loginPassword);
-    // Add logic for handling login (e.g., send request to backend)
+  
+  const handleLogin = async () => {
+    try {
+      // Firebase login logic
+      await auth.signInWithEmailAndPassword(loginEmail, loginPassword);
+
+      // Add any additional logic you need after successful login
+      console.log('Login successful!');
+
+      // Display success message
+      setLoginMessage('Login successful! Redirecting to professionals...');
+      
+      // Redirect to "Professionals.js" after 3 seconds
+      setTimeout(() => {
+        navigate('/professionals');
+      }, 3000);
+    } catch (error) {
+      // Display error message for unsuccessful login
+      setLoginMessage('Email or password is wrong. Please try again.');
+      console.error('Error logging in:', error.message);
+    }
   };
+
 
   const handleRegistration = async () => {
     try {
@@ -53,11 +78,14 @@ const SimpleLogin = () => {
       // Add any additional logic you need after successful registration
       console.log('Registration successful! Verification email sent.');
 
-      // Redirect user to a verification page or show a message indicating verification email has been sent
+      // Redirect user to the "AfterSignUp.js" component
+      navigate('/after-signup');
     } catch (error) {
       console.error('Error registering:', error.message);
     }
   };
+
+  
 
   const handleToggleForm = () => {
     setShowRegistration(!showRegistration);
@@ -188,8 +216,14 @@ const SimpleLogin = () => {
                   />
                 </Form.Group>
                 <Button variant="primary" onClick={handleLogin} style={{ marginTop: '10px' }}>
-                  Login
-                </Button>
+          Login
+        </Button>
+
+        {loginMessage && (
+          <p className={`login-message ${loginMessage.includes('successful') ? 'success' : 'error'}`}>
+            {loginMessage}
+          </p>
+        )}
               </Form>
             )}
 
@@ -215,6 +249,27 @@ const SimpleLogin = () => {
       </Row>
     </Container>
   );
+              }
+          else{
+            const handleLogout = async () => {
+              try {
+                // Log out the user using Firebase
+                await auth.signOut();
+                console.log('User logged out successfully');
+              } catch (error) {
+                console.error('Error logging out:', error.message);
+              }
+            };
+
+            return(
+              <div style={{textAlign:'center',paddingTop:'150px'}}>
+            <h1 >You have currently logged in as , {currentUser.email}!</h1>
+            <Link to="/" className="redirect-button" style={{backgroundColor:'green'}}>Go to Home</Link>
+            <br></br>
+            <Link className="redirect-button" onClick={handleLogout}>Log Out</Link>
+            </div>
+            )
+          }
 };
 
 export default SimpleLogin;

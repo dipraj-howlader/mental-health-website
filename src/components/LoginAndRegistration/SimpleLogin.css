@@ -61,3 +61,17 @@
 .login-link:hover {
   text-decoration: underline;
 }
+/* SimpleLogin.css */
+.login-message {
+  margin-top: 10px;
+  font-size: 1.2em;
+}
+
+.success {
+  color: green;
+}
+
+.error {
+  color: red;
+}
+
