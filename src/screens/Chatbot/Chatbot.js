@@ -31,7 +31,7 @@ function Chatbot({ onClose }) {
     };
 
     const processMessageToChatGPT = async (chatMessages) => {
-        const API_KEY = "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";
+        const API_KEY = process.env.REACT_APP_OPENAI_API_KEY;
 
         let apiMessages = chatMessages.map((messageObject)=>{
             let role="";
