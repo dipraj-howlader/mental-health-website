@@ -11,6 +11,7 @@ import AfterSignUp from './components/LoginAndRegistration/AfterSignUp';
 import BookAppointment from './components/AppointmentAndBooking/BookAppointment';
 
 
+
 const App = () => {
   return (
     <Router>

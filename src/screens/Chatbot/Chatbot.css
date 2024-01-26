@@ -1,0 +1,87 @@
+/* Chat Window Container */
+.chat-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 100;
+    width: 300px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Chat Window Header */
+.chat-header {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Chat Window Close Button */
+.close-button {
+    cursor: pointer;
+    color: #fff;
+    font-weight: bold;
+}
+
+/* Chat Window Messages Area */
+.response-area {
+    padding: 10px;
+    height: 250px;
+    overflow-y: auto;
+}
+
+/* Chat Window Input Area */
+.prompt-area {
+    display: flex;
+    padding: 10px;
+    background-color: #f9f9f9;
+}
+
+/* Chat Input Field */
+.prompt-area input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-right: 8px;
+}
+
+/* Send Button */
+.submit {
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.message {
+    padding: 10px;
+    border-radius: 8px;
+    margin: 8px;
+    max-width: 80%;
+    word-wrap: break-word;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+/* User Message Style */
+.user-message {
+    align-self: flex-end;
+    background-color: #000;
+    color: #fff;
+}
+
+/* Assistant Message Style */
+.assistant-message {
+    align-self: flex-start;
+    background-color: #4caf50;
+    color: #fff;
+}

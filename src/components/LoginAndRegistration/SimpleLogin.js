@@ -5,7 +5,7 @@ import './SimpleLogin.css'; // Custom CSS file for additional styling
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import { useNavigate } from 'react-router-dom';
-import { useAuth } from '../../AuthContext';
+import { AuthProvider, useAuth } from '../../AuthContext';
 import { Link } from 'react-router-dom';
 
 const firebaseConfig = {
@@ -43,49 +43,62 @@ const SimpleLogin = () => {
   if (!currentUser) {
 
   
-  const handleLogin = async () => {
-    try {
-      // Firebase login logic
-      await auth.signInWithEmailAndPassword(loginEmail, loginPassword);
+    const handleLogin = async () => {
+      try {
+        const userCredential = await auth.signInWithEmailAndPassword(loginEmail, loginPassword);
+    
+        // Check if the user's email is verified
+        if (!userCredential.user.emailVerified) {
+          setLoginMessage('Email not verified. Please check your email for verification instructions.');
+          return;
+        }
+    
+        // Additional logic after successful login
+        console.log('Login successful!');
+    
+        // Redirect or perform other actions
+      } catch (error) {
+        // Handle login error
+        setLoginMessage('Email or password is wrong. Please try again.');
+        console.error('Error logging in:', error.message);
+      }
+    };
+    
 
-      // Add any additional logic you need after successful login
-      console.log('Login successful!');
+    const handleRegistration = async () => {
+      try {
+        const userCredential = await auth.createUserWithEmailAndPassword(
+          registrationData.email,
+          registrationData.password
+        );
+    
+        // Send email verification
+        await userCredential.user.sendEmailVerification();
+    
+        // Use onIdTokenChanged to get notified when the user's ID token changes
+        const unsubscribe = auth.onIdTokenChanged(async (user) => {
+          if (user) {
+            await user.reload();
+            if (user.emailVerified) {
+              // The email has been verified, set the email in AuthProvider
+              const authProvider = new AuthProvider();
+              authProvider.setEmail(registrationData.email);
+    
+              // Redirect user to the "AfterSignUp.js" component
+              navigate('/after-signup');
+            }
+          }
+        });
+    
+        return unsubscribe;
+      } catch (error) {
+        console.error('Error registering:', error.message);
+      }
+    };
+    
+    
 
-      // Display success message
-      setLoginMessage('Login successful! Redirecting to professionals...');
-      
-      // Redirect to "Professionals.js" after 3 seconds
-      setTimeout(() => {
-        navigate('/professionals');
-      }, 3000);
-    } catch (error) {
-      // Display error message for unsuccessful login
-      setLoginMessage('Email or password is wrong. Please try again.');
-      console.error('Error logging in:', error.message);
-    }
-  };
 
-
-  const handleRegistration = async () => {
-    try {
-      // Firebase registration logic
-      const userCredential = await auth.createUserWithEmailAndPassword(registrationData.email, registrationData.password);
-      const user = userCredential.user;
-
-      // Send email verification
-      await user.sendEmailVerification();
-
-      // Add any additional logic you need after successful registration
-      console.log('Registration successful! Verification email sent.');
-
-      // Redirect user to the "AfterSignUp.js" component
-      navigate('/after-signup');
-    } catch (error) {
-      console.error('Error registering:', error.message);
-    }
-  };
-
-  
 
   const handleToggleForm = () => {
     setShowRegistration(!showRegistration);
@@ -228,7 +241,7 @@ const SimpleLogin = () => {
             )}
 
             <div className="text-center mt-3">
-              {showRegistration ? (
+             if(user.emailVerified)  {showRegistration ? (
                 <>
                   Already registered?{' '}
                   <span className="login-link" onClick={handleToggleForm}>
