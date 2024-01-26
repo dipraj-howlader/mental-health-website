@@ -1,0 +1,563 @@
+{
+    "intents": [
+      {
+        "tag": "greeting",
+        "patterns": [
+          "Hi",
+          "Hey",
+          "How are you",
+          "Is anyone there?",
+          "Hello",
+          "Good day"
+        ],
+        "responses": [
+          "Hey :-)",
+          "Hello, thanks for visiting",
+          "Hi there, what can I do for you?",
+          "Hi there, how can I help?"
+        ]
+      },
+      {
+        "tag": "goodbye",
+        "patterns": ["Bye", "See you later", "Goodbye"],
+        "responses": [
+          "See you later, thanks for visiting",
+          "Have a nice day",
+          "Bye! Come back again soon."
+        ]
+      },
+      {
+        "tag": "thanks",
+        "patterns": ["Thanks", "Thank you", "That's helpful", "Thank's a lot!"],
+        "responses": ["Happy to help!", "Any time!", "My pleasure"]
+      },
+      {
+        "tag": "items",
+        "patterns": [
+          "Which items do you have?",
+          "What kinds of items are there?",
+          "What do you sell?"
+        ],
+        "responses": [
+          "We sell coffee and tea",
+          "We have coffee and tea"
+        ]
+      },
+      {
+        "tag": "payments",
+        "patterns": [
+          "Do you take credit cards?",
+          "Do you accept Mastercard?",
+          "Can I pay with Paypal?",
+          "Are you cash only?"
+        ],
+        "responses": [
+          "We accept VISA, Mastercard and Paypal",
+          "We accept most major credit cards, and Paypal"
+        ]
+      },
+      {
+        "tag": "delivery",
+        "patterns": [
+          "How long does delivery take?",
+          "How long does shipping take?",
+          "When do I get my delivery?"
+        ],
+        "responses": [
+          "Delivery takes 2-4 days",
+          "Shipping takes 2-4 days"
+        ]
+      },
+      {
+        "tag": "funny",
+        "patterns": [
+          "Tell me a joke!",
+          "Tell me something funny!",
+          "Do you know a joke?"
+        ],
+        "responses": [
+          "Why did the hipster burn his mouth? He drank the coffee before it was cool.",
+          "What did the buffalo say when his son left for college? Bison."
+        ]
+      },
+      {
+        "tag": "weather",
+        "patterns": [
+            "What's the weather like today?",
+            "Is it going to rain?",
+            "Tell me the forecast",
+            "How's the weather?"
+        ],
+        "responses": [
+            "The weather is sunny today.",
+            "It looks like rain later.",
+            "The forecast predicts clear skies."
+        ]
+    },
+    {
+        "tag": "recommendation",
+        "patterns": [
+            "Can you recommend a movie?",
+            "What book should I read?",
+            "Any good music suggestions?",
+            "What's your favorite restaurant?"
+        ],
+        "responses": [
+            "I recommend the movie 'Inception'.",
+            "You should read 'The Great Gatsby'.",
+            "Listen to 'Bohemian Rhapsody' by Queen.",
+            "One of my favorite restaurants is 'The Foodie Haven'."
+        ]
+    },
+    {
+        "tag": "technology",
+        "patterns": [
+            "Tell me about the latest technology news",
+            "What's new in tech?",
+            "Any cool gadgets you know?",
+            "Tell me about AI"
+        ],
+        "responses": [
+            "The latest in tech includes advancements in AI and machine learning.",
+            "There's a new smartphone with impressive features.",
+            "Explore the world of virtual reality and augmented reality.",
+            "AI is revolutionizing industries with its innovative applications."
+        ]
+    },
+    {
+        "tag": "sports",
+        "patterns": [
+            "Who won the last game?",
+            "Tell me about sports news",
+            "Any upcoming sports events?",
+            "Who's leading in the league?"
+        ],
+        "responses": [
+            "The last game was won by the home team.",
+            "In sports news, there's an exciting tournament coming up.",
+            "Check out the upcoming sports events in your area.",
+            "The team leading in the league is currently on a winning streak."
+        ]
+    },
+    {
+        "tag": "health",
+        "patterns": [
+            "How can I stay healthy?",
+            "Tell me about a balanced diet",
+            "Any fitness tips?",
+            "What's good for mental health?"
+        ],
+        "responses": [
+            "Staying active and eating a balanced diet are essential for good health.",
+            "Include fruits, vegetables, and whole grains in your diet.",
+            "Regular exercise is key to maintaining physical and mental well-being.",
+            "Practicing mindfulness can contribute to better mental health."
+        ]
+    },
+    {
+        "tag": "travel",
+        "patterns": [
+            "Any travel recommendations?",
+            "Tell me about popular tourist destinations",
+            "Best travel tips",
+            "Share a travel experience"
+        ],
+        "responses": [
+            "Consider visiting scenic locations like the Grand Canyon or Santorini.",
+            "Popular tourist destinations include Paris, Tokyo, and New York City.",
+            "Pack light, plan ahead, and immerse yourself in the local culture for a great travel experience.",
+            "I once visited a beautiful beach resort with crystal-clear waters and white sandy beaches."
+        ]
+    },
+    {
+        "tag": "programming",
+        "patterns": [
+            "Tell me about programming languages",
+            "Any coding tips?",
+            "Recommended programming books",
+            "What's the latest in software development?"
+        ],
+        "responses": [
+            "Programming languages like Python, JavaScript, and Java are widely used.",
+            "Practice regularly and work on projects to improve your coding skills.",
+            "Recommended books include 'Clean Code' and 'The Pragmatic Programmer'.",
+            "The latest trends in software development include cloud computing and containerization."
+        ]
+    },
+    {
+        "tag": "music",
+        "patterns": [
+            "What's your favorite music genre?",
+            "Tell me about new music releases",
+            "Any music festivals happening?",
+            "Recommend a good playlist"
+        ],
+        "responses": [
+            "I enjoy a variety of genres, but electronic music is a favorite.",
+            "Check out the latest music releases from artists across different genres.",
+            "Music festivals like Coachella and Glastonbury are popular worldwide.",
+            "Here's a playlist with a mix of classic and current hits: [Your Playlist Link]."
+        ]
+    },
+    {
+        "tag": "mental_health",
+        "patterns": [
+            "How to cope with stress?",
+            "Tell me about mindfulness exercises",
+            "Dealing with anxiety",
+            "Tips for better sleep"
+        ],
+        "responses": [
+            "Practice deep breathing and meditation to cope with stress.",
+            "Mindfulness exercises, such as mindful breathing, can help bring calmness.",
+            "If you're dealing with anxiety, consider talking to a mental health professional.",
+            "Establish a bedtime routine and create a comfortable sleep environment for better sleep."
+        ]
+    },
+    {
+        "tag": "self_care",
+        "patterns": [
+            "Why is self-care important?",
+            "Ideas for self-care routines",
+            "Taking care of mental well-being",
+            "Balancing work and personal life"
+        ],
+        "responses": [
+            "Self-care is crucial for maintaining overall well-being and preventing burnout.",
+            "Self-care routines can include activities like reading, taking a walk, or enjoying a hobby.",
+            "Prioritize mental well-being by setting boundaries, practicing self-compassion, and seeking support.",
+            "Balancing work and personal life involves effective time management and setting realistic goals."
+        ]
+    },
+    {
+        "tag": "mental_health_resources",
+        "patterns": [
+            "Where can I find mental health resources?",
+            "Online therapy options",
+            "Support groups for mental health",
+            "Apps for mental well-being"
+        ],
+        "responses": [
+            "You can find mental health resources at local mental health organizations or online platforms.",
+            "Consider online therapy platforms like BetterHelp or Talkspace for professional support.",
+            "Joining support groups can provide a sense of community and understanding.",
+            "Explore mental health apps like Headspace or Calm for guided meditation and relaxation."
+        ]
+    },
+    {
+        "tag": "mindful_activities",
+        "patterns": [
+            "Mindful activities for stress relief",
+            "Practicing gratitude",
+            "Mindful eating",
+            "Mindful walking exercises"
+        ],
+        "responses": [
+            "Mindful activities like yoga, tai chi, and deep breathing can help relieve stress.",
+            "Practicing gratitude involves reflecting on and appreciating positive aspects of your life.",
+            "Mindful eating encourages paying attention to the sensations and flavors while eating.",
+            "Try mindful walking by focusing on each step and being present in the moment."
+        ]
+    },
+    {
+        "tag": "mental_health_support",
+        "patterns": [
+            "How to support someone with mental health issues?",
+            "Providing help to a friend with depression",
+            "Talking to someone about their mental well-being",
+            "Encouraging seeking professional help"
+        ],
+        "responses": [
+            "Offer a listening ear and express empathy when supporting someone with mental health issues.",
+            "Encourage your friend to seek professional help if they're experiencing symptoms of depression.",
+            "Approach conversations about mental well-being with sensitivity and an open, non-judgmental attitude.",
+            "Support and assist in finding a mental health professional for specialized help."
+        ]
+    },
+    {
+        "tag": "workplace_mental_health",
+        "patterns": [
+            "Promoting mental health in the workplace",
+            "Coping with stress at work",
+            "Taking mental health days off",
+            "Creating a supportive work environment"
+        ],
+        "responses": [
+            "Promote mental health by fostering a supportive and inclusive workplace culture.",
+            "Cope with work-related stress by practicing mindfulness and taking short breaks.",
+            "Taking mental health days off is important for maintaining overall well-being.",
+            "Create a supportive work environment by encouraging open communication and offering resources."
+        ]
+    },
+    {
+        "tag": "mindfulness_exercises",
+        "patterns": [
+            "Guided mindfulness exercises",
+            "Mindfulness meditation techniques",
+            "Mindful breathing exercises",
+            "Body scan mindfulness practice"
+        ],
+        "responses": [
+            "Explore guided mindfulness exercises that focus on relaxation and present-moment awareness.",
+            "Practice mindfulness meditation techniques, such as focusing on the breath or a specific thought.",
+            "Try mindful breathing exercises to promote relaxation and reduce stress.",
+            "Engage in a body scan mindfulness practice to increase awareness of bodily sensations and reduce tension."
+        ]
+    },
+    {
+        "tag": "stress_management",
+        "patterns": [
+            "Effective stress management techniques",
+            "Stress-relief activities for busy schedules",
+            "Coping with chronic stress",
+            "Mind-body connection for stress reduction"
+        ],
+        "responses": [
+            "Effective stress management includes regular physical activity, healthy eating, and sufficient sleep.",
+            "Incorporate stress-relief activities into busy schedules, such as short walks or deep breathing exercises.",
+            "Coping with chronic stress may require a combination of lifestyle changes and professional support.",
+            "Recognize the mind-body connection and explore activities that contribute to stress reduction, like yoga or progressive muscle relaxation."
+        ]
+    },
+    {
+        "tag": "positive_affirmations",
+        "patterns": [
+            "Benefits of positive affirmations",
+            "Creating personalized affirmations",
+            "Incorporating affirmations into daily routines",
+            "Overcoming negative self-talk"
+        ],
+        "responses": [
+            "Positive affirmations can boost self-esteem, promote positive thinking, and reduce stress.",
+            "Create personalized affirmations that reflect your goals, strengths, and values.",
+            "Incorporate affirmations into daily routines, such as saying them during morning rituals or before bedtime.",
+            "Overcome negative self-talk by replacing it with positive and empowering affirmations."
+        ]
+    },
+    {
+        "tag": "sleep_health",
+        "patterns": [
+            "Tips for improving sleep quality",
+            "Establishing a healthy sleep routine",
+            "Dealing with insomnia",
+            "Creating a sleep-friendly environment"
+        ],
+        "responses": [
+            "Improve sleep quality by maintaining a consistent sleep schedule and creating a relaxing bedtime routine.",
+            "Establish a healthy sleep routine by avoiding stimulants, reducing screen time, and creating a comfortable sleep environment.",
+            "If dealing with insomnia, consider practicing relaxation techniques and seeking advice from a healthcare professional.",
+            "Create a sleep-friendly environment by keeping the bedroom dark, quiet, and at a comfortable temperature."
+        ]
+    },
+    {
+        "tag": "social_connection",
+        "patterns": [
+            "Importance of social connections for mental health",
+            "Building and maintaining social relationships",
+            "Coping with loneliness",
+            "Balancing social interactions"
+        ],
+        "responses": [
+            "Social connections play a crucial role in mental health, providing support and a sense of belonging.",
+            "Build and maintain social relationships by engaging in activities that foster connection.",
+            "Cope with loneliness by reaching out to friends, joining clubs, or participating in social events.",
+            "Balance social interactions by finding a comfortable level that aligns with personal preferences and needs."
+        ]
+    },
+    {
+        "tag": "mindful_technology_use",
+        "patterns": [
+            "Mindful use of technology for mental well-being",
+            "Digital detox tips",
+            "Setting boundaries for screen time",
+            "Balancing online and offline activities"
+        ],
+        "responses": [
+            "Practice mindful use of technology by taking breaks, setting limits, and being intentional with screen time.",
+            "Consider digital detox tips, such as scheduling device-free periods and disconnecting from social media.",
+            "Set boundaries for screen time to prevent technology-related stress and fatigue.",
+            "Balance online and offline activities by engaging in hobbies, outdoor activities, and face-to-face interactions."
+        ]
+    },
+    {
+        "tag": "coping_strategies",
+        "patterns": [
+            "Effective coping strategies for challenges",
+            "Resilience-building techniques",
+            "Coping with setbacks",
+            "Developing a positive mindset"
+        ],
+        "responses": [
+            "Effective coping strategies include problem-solving, seeking support, and maintaining a positive outlook.",
+            "Build resilience through practices like cultivating optimism, adapting to change, and learning from experiences.",
+            "Cope with setbacks by acknowledging emotions, reassessing goals, and focusing on personal growth.",
+            "Develop a positive mindset by practicing gratitude, challenging negative thoughts, and fostering a sense of purpose."
+        ]
+    },
+    {
+        "tag": "therapeutic_approaches",
+        "patterns": [
+            "Exploring therapeutic approaches for mental health",
+            "Benefits of counseling and therapy",
+            "Understanding different therapeutic modalities",
+            "Accessing mental health support"
+        ],
+        "responses": [
+            "Explore therapeutic approaches, such as counseling, psychotherapy, and behavioral therapy, for mental health support.",
+            "Understand the benefits of counseling and therapy, including improved coping skills and emotional well-being.",
+            "Learn about different therapeutic modalities, such as cognitive-behavioral therapy (CBT), mindfulness-based therapy, and psychodynamic therapy.",
+            "Access mental health support through licensed professionals, community resources, and online platforms."
+        ]
+    },
+    {
+        "tag": "mindful_exercises",
+        "patterns": [
+            "Mindful exercises for daily practice",
+            "Mindful movement activities",
+            "Incorporating mindfulness into daily life",
+            "Mindfulness for stress reduction"
+        ],
+        "responses": [
+            "Practice mindful exercises, like mindful breathing, body scan, and loving-kindness meditation, for daily well-being.",
+            "Engage in mindful movement activities such as yoga, tai chi, or qigong for physical and mental health benefits.",
+            "Incorporate mindfulness into daily life by bringing awareness to routine activities and being fully present.",
+            "Use mindfulness for stress reduction by cultivating mindfulness techniques and integrating them into daily routines."
+        ]
+    },
+    {
+        "tag": "nutrition_and_mental_health",
+        "patterns": [
+            "Connection between nutrition and mental health",
+            "Healthy eating habits for well-being",
+            "Foods that support mental health",
+            "Balancing nutrition for optimal brain function"
+        ],
+        "responses": [
+            "Understand the connection between nutrition and mental health, recognizing the impact of diet on mood and cognitive function.",
+            "Develop healthy eating habits for overall well-being, including a balanced and nutrient-rich diet.",
+            "Explore foods that support mental health, such as those rich in omega-3 fatty acids, antioxidants, and vitamins.",
+            "Balance nutrition to optimize brain function by incorporating a variety of food groups and staying hydrated."
+        ]
+    },
+    {
+        "tag": "goal_setting",
+        "patterns": [
+            "Effective goal-setting for personal growth",
+            "Setting realistic and achievable goals",
+            "Overcoming challenges in goal pursuit",
+            "Celebrating small victories"
+        ],
+        "responses": [
+            "Practice effective goal-setting by defining clear objectives, breaking them into smaller tasks, and creating a realistic timeline.",
+            "Set realistic and achievable goals to promote motivation, focus, and a sense of accomplishment.",
+            "Overcome challenges in goal pursuit by adapting strategies, seeking support, and learning from setbacks.",
+            "Celebrate small victories along the way, recognizing progress and reinforcing positive behaviors."
+        ]
+    },
+    {
+        "tag": "hobbies_for_wellbeing",
+        "patterns": [
+            "Importance of hobbies for mental well-being",
+            "Exploring new hobbies and interests",
+            "Creative hobbies for self-expression",
+            "Balancing leisure activities"
+        ],
+        "responses": [
+            "Engaging in hobbies is important for mental well-being, providing stress relief and a sense of fulfillment.",
+            "Explore new hobbies and interests to discover activities that bring joy and satisfaction.",
+            "Creative hobbies, such as writing, painting, or playing music, offer opportunities for self-expression and emotional release.",
+            "Balance leisure activities by incorporating a mix of hobbies that cater to physical, mental, and creative aspects."
+        ]
+    },
+    {
+        "tag": "laughter_therapy",
+        "patterns": [
+            "Benefits of laughter therapy",
+            "Incorporating humor into daily life",
+            "Laughter exercises for stress reduction",
+            "Finding joy in everyday moments"
+        ],
+        "responses": [
+            "Laughter therapy offers numerous benefits, including stress reduction, improved mood, and enhanced social connections.",
+            "Incorporate humor into daily life by watching comedy, sharing jokes, and finding lighthearted moments.",
+            "Practice laughter exercises, like laughter yoga or simply laughing without reason, to experience immediate stress relief.",
+            "Find joy in everyday moments by appreciating humor, connecting with others, and maintaining a positive perspective."
+        ]
+    },
+    {
+        "tag": "mindful_communication",
+        "patterns": [
+            "Practicing mindful communication",
+            "Active listening techniques",
+            "Nonviolent communication principles",
+            "Building positive relationships through communication"
+        ],
+        "responses": [
+            "Practice mindful communication by being present, expressing thoughts clearly, and listening attentively.",
+            "Incorporate active listening techniques, such as paraphrasing and reflecting, to enhance communication and understanding.",
+            "Explore nonviolent communication principles, emphasizing empathy, honesty, and collaboration.",
+            "Build positive relationships through effective communication, fostering mutual respect and open dialogue."
+        ]
+    },
+    {
+        "tag": "time_management",
+        "patterns": [
+            "Effective time management for stress reduction",
+            "Prioritizing tasks and responsibilities",
+            "Setting boundaries to manage time",
+            "Creating a balanced schedule"
+        ],
+        "responses": [
+            "Practice effective time management to reduce stress, increase productivity, and achieve work-life balance.",
+            "Prioritize tasks and responsibilities by identifying important and urgent activities.",
+            "Set boundaries to manage time effectively, including saying no to nonessential commitments and taking breaks.",
+            "Create a balanced schedule that allocates time for work, relaxation, self-care, and social activities."
+        ]
+    },
+    {
+        "tag": "physical_activity_mental_health",
+        "patterns": [
+            "Benefits of physical activity for mental health",
+            "Incorporating exercise into daily routines",
+            "Choosing enjoyable physical activities",
+            "Balancing different types of exercise"
+        ],
+        "responses": [
+            "Physical activity offers numerous benefits for mental health, including reduced stress and improved mood.",
+            "Incorporate exercise into daily routines, such as walking, cycling, or engaging in sports.",
+            "Choose enjoyable physical activities to make exercise a positive and sustainable part of your routine.",
+            "Balance different types of exercise, including aerobic, strength training, and flexibility exercises, for overall well-being."
+        ]
+    },
+    {
+        "tag": "mindful_nature_connection",
+        "patterns": [
+            "Connecting with nature for mental well-being",
+            "Mindful nature walks and observations",
+            "Benefits of spending time outdoors",
+            "Nature-based mindfulness practices"
+        ],
+        "responses": [
+            "Connecting with nature is beneficial for mental well-being, providing a sense of calm and connection.",
+            "Engage in mindful nature walks and observations, focusing on the sights, sounds, and sensations of the natural environment.",
+            "Explore the benefits of spending time outdoors, including improved mood, reduced stress, and increased creativity.",
+            "Practice nature-based mindfulness, such as grounding exercises and mindful breathing, to enhance the connection with the natural world."
+        ]
+    },
+    {
+        "tag": "positive_self_affirmations",
+        "patterns": [
+            "Practicing positive self-affirmations",
+            "Overcoming self-doubt and negative thoughts",
+            "Building self-confidence through affirmations",
+            "Incorporating affirmations into daily affirmations"
+        ],
+        "responses": [
+            "Practice positive self-affirmations to challenge self-doubt and foster a positive mindset.",
+            "Overcome self-doubt and negative thoughts by replacing them with affirmations that reflect your strengths and capabilities.",
+            "Build self-confidence through affirmations that focus on your achievements, qualities, and potential.",
+            "Incorporate affirmations into daily routines, repeating them with intention and belief in their positive impact."
+        ]
+    }
+    ]
+  }

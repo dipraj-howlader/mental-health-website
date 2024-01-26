@@ -5,7 +5,7 @@
     right: 20px;
     z-index: 100;
     width: 300px;
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.9); /* Transparent white background */
     border: 1px solid #ddd;
     border-radius: 10px;
     overflow: hidden;
@@ -14,7 +14,7 @@
 
 /* Chat Window Header */
 .chat-header {
-    background-color: #4caf50;
+    background: linear-gradient(45deg, rgba(35, 46, 158, 0.7), rgba(6, 36, 57, 0.7)); /* Transparent gradient background */
     color: #fff;
     padding: 10px;
     display: flex;
@@ -34,13 +34,14 @@
     padding: 10px;
     height: 250px;
     overflow-y: auto;
+    background: linear-gradient(135deg, rgba(27, 29, 27, 0.3), rgba(46, 1, 48, 0.3)); /* Transparent gradient background */
 }
 
 /* Chat Window Input Area */
 .prompt-area {
     display: flex;
     padding: 10px;
-    background-color: #f9f9f9;
+    background: linear-gradient(45deg, rgba(46, 204, 113, 0.5), rgba(52, 152, 219, 0.5)); /* Transparent gradient background */
 }
 
 /* Chat Input Field */
@@ -54,14 +55,16 @@
 
 /* Send Button */
 .submit {
-    background-color: #4caf50;
+    background: linear-gradient(70deg, #377fae, #97165d); /* Gradient for the send button */
     color: #fff;
     border: none;
     padding: 8px 16px;
     border-radius: 5px;
     cursor: pointer;
+    transition: background 0.3s ease;
 }
 
+/* Message Style */
 .message {
     padding: 10px;
     border-radius: 8px;
@@ -75,13 +78,15 @@
 /* User Message Style */
 .user-message {
     align-self: flex-end;
-    background-color: #000;
+    background-color: rgba(0, 0, 0, 0.8); /* Transparent black background */
     color: #fff;
+    margin-left: 100px;
+    text-align: right;
 }
 
 /* Assistant Message Style */
 .assistant-message {
     align-self: flex-start;
-    background-color: #4caf50;
-    color: #fff;
+    background: linear-gradient(45deg, rgba(46, 204, 113, 0.5), rgba(52, 152, 219, 0.5)); /* Transparent gradient background */
+    color: #080101;
 }
