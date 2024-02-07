@@ -51,6 +51,14 @@ function Chatbot({ onClose }) {
             content: "Explain all concept like I am 10 years old"
         }
 
+        setMessages([
+            ...chatMessages,
+            {
+                message: "Typing...",
+                sender: "ChatGPT",
+            },
+        ]);
+
         const apiRequestBody = {
             "model": "gpt-3.5-turbo",
             "messages": [
