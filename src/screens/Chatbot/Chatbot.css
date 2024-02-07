@@ -4,13 +4,15 @@
     bottom: 20px;
     right: 20px;
     z-index: 100;
-    width: 300px;
+    width: 350px;
     background-color: rgba(255, 255, 255, 0.9); /* Transparent white background */
     border: 1px solid #ddd;
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+/* ... existing styles remain unchanged ... */
 
 /* Chat Window Header */
 .chat-header {
@@ -21,6 +23,23 @@
     justify-content: space-between;
     align-items: center;
 }
+
+/* Chat Window Toggle Button */
+.toggle-button {
+    cursor: pointer;
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+    margin-right: 10px;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.toggle-button:hover {
+    background: rgba(255, 255, 255, 0.1); /* Transparent white background on hover */
+    transform: scale(1.1); /* Scale up on hover */
+}
+
+/* ... rest of the existing styles remain unchanged ... */
 
 /* Chat Window Close Button */
 .close-button {

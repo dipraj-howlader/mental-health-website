@@ -3,6 +3,7 @@ import './Chatbot.css';
 
 function Chatbot({ onClose }) {
     const [input, setInput] = useState('');
+    const [turboMode, setTurboMode] = useState(false);
     const [messages, setMessages] = useState([
         {
             message: "Hello, I am Lina from Safental.Com",
@@ -68,21 +69,37 @@ function Chatbot({ onClose }) {
         })
             .then((response) => response.json())
             .then((data) => {
-                console.log(data.choices[0].message.content);
+                let responseline;
+                if (turboMode) {
+                    responseline = data.choices[0].message.content;
+                } else {
+                    const responseLines = data.choices[0].message.content.split('\n');
+                    responseline = responseLines[0].split('.')[0];
+                }
+
+                console.log(responseline);
                 setMessages([
                     ...chatMessages,
                     {
-                        message: data.choices[0].message.content,
+                        message: responseline,
                         sender: "ChatGPT",
                     },
                 ]);
             });
     };
 
+
+    const handleToggleMode = () => {
+        setTurboMode(!turboMode);
+    };
+
     return (
         <div className="chat-container">
-            <div className="chat-header">
-                <span>Chat Support</span>
+                      <div className="chat-header">
+                <span>Chat Support - {turboMode ? 'Turbo Mode' : 'Normal Mode'}</span>
+                <div className="toggle-button" onClick={handleToggleMode}>
+                    Change Mode
+                </div>
                 <div className="close-button" onClick={onClose}>
                     Close
                 </div>
