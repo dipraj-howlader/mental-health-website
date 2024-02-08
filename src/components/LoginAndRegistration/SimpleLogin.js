@@ -64,6 +64,16 @@ const SimpleLogin = () => {
       }
     };
     
+    // const handleForgotPassword = async () => {
+    //   try {
+    //     // Send password reset email
+    //     await auth.sendPasswordResetEmail(loginEmail);
+    //     setLoginMessage('Password reset email sent. Please check your email.');
+    //   } catch (error) {
+    //     setLoginMessage('Failed to send password reset email. Please try again.');
+    //     console.error('Error sending password reset email:', error.message);
+    //   }
+    // };
 
     const handleRegistration = async () => {
       try {
@@ -96,9 +106,14 @@ const SimpleLogin = () => {
       }
     };
     
-    
+    const handleDoctorLogin = () => {
+      // Redirect to DoctorLogin.js
+      navigate('/doctor-login');
+    };
 
-
+const handleAdminLogin= () =>{
+  navigate('/admin-login');
+}
 
   const handleToggleForm = () => {
     setShowRegistration(!showRegistration);
@@ -231,6 +246,7 @@ const SimpleLogin = () => {
                 <Button variant="primary" onClick={handleLogin} style={{ marginTop: '10px' }}>
           Login
         </Button>
+        <Link style={{marginLeft:'15px'}} to="/forgotpassword">Forgot Password?</Link>
 
         {loginMessage && (
           <p className={`login-message ${loginMessage.includes('successful') ? 'success' : 'error'}`}>
@@ -241,7 +257,7 @@ const SimpleLogin = () => {
             )}
 
             <div className="text-center mt-3">
-             if(user.emailVerified)  {showRegistration ? (
+            {showRegistration ? (
                 <>
                   Already registered?{' '}
                   <span className="login-link" onClick={handleToggleForm}>
@@ -256,6 +272,19 @@ const SimpleLogin = () => {
                   </span>
                 </>
               )}
+                  { !showRegistration?( <>
+              <br />
+              <br />
+                      <Button variant="warning" onClick={handleDoctorLogin} style={{ marginTop: '10px' }}>
+                  Login As Doctor
+                </Button>
+                <Button variant="danger" onClick={handleAdminLogin} style={{ marginTop: '10px' ,marginLeft:'10px'}}>
+                  Login As Admin
+                </Button>
+                </>
+              ): <></>}
+
+
             </div>
           </div>
         </Col>
