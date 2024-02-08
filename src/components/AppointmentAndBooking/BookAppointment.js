@@ -3,6 +3,8 @@ import { Container, Row, Col, Card, Button, Form, Modal } from 'react-bootstrap'
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useStripe, useElements, CardElement } from '@stripe/react-stripe-js';
 import jsPDF from 'jspdf';
+import emailjs from 'emailjs-com';
+
 
 const BookAppointment = () => {
   const [selectedProfessional, setSelectedProfessional] = useState(null);
@@ -101,6 +103,31 @@ const BookAppointment = () => {
       // Show success modal
       setShowSuccessModal(true);
     }
+    try {
+      // Send appointment confirmation email using emailjs
+      const templateParams = {
+        reply_to: selectedProfessional.email, // Replace with actual doctor's email
+        patientName,
+        appointmentDate,
+        doctorName: selectedProfessional.name
+      };
+
+      await emailjs.send(
+        'service_hd0hm7h', // Replace with your EmailJS service ID
+        'template_rjhd6vu', // Replace with your EmailJS template ID
+        templateParams,
+        'user_ltAIR9CMtnfij3B3GpHs8' // Replace with your EmailJS user ID
+      );
+
+      // Show success modal after sending email
+      setShowSuccessModal(true);
+    } catch (error) {
+      console.error('Error sending email:', error);
+      // Show failure modal if email sending fails
+      setShowFailureModal(true);
+    }
+
+
   };
 
   const handleBackToMainMenu = () => {
@@ -119,6 +146,7 @@ const BookAppointment = () => {
               <Card.Body>
                 <Card.Title>{selectedProfessional.name}</Card.Title>
                 <Card.Subtitle className="mb-2 text-muted">{selectedProfessional.specialist}</Card.Subtitle>
+                <Card.Subtitle className="mb-2">Email: {selectedProfessional.email}</Card.Subtitle>
                 <Card.Text>
                   <strong>Appointment Fee:</strong> ${selectedProfessional.fee}
                 </Card.Text>

@@ -8,10 +8,12 @@ const DoctorLogin = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
+  const [isLoggedIn, setIsLoggedIn] = useState(false); // Track authentication status
 
   const handleLogin = () => {
     if (username === 'doctor' && password === 'doctor') {
-      // If username and password match, redirect to DoctorDashboard.js
+      // If username and password match, set authentication status to true
+      setIsLoggedIn(true);
       navigate('/doctor-dashboard');
     } else {
       // If username and password do not match, display error message

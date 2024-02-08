@@ -29,63 +29,72 @@ const AppointmentList = () => {
       name: 'Dr. John Doe',
       specialist: 'Psychiatrist',
       photo: image1,
-      fee: 500
+      fee: 500,
+      email: 'rajdiponly36@gmail.com'
     },
     {
       id: 2,
       name: 'Dr. Jane Smith',
       specialist: 'Clinical Psychologist',
       photo: image2,
-      fee: 1000
+      fee: 1000,
+      email: 'rajdiponly36@gmail.com'
     },
     {
       id: 3,
       name: 'Dr. Mark Johnson',
       specialist: 'Counseling Psychologist',
       photo: image3,
-      fee: 1200
+      fee: 1200,
+      email: 'rajdiponly36@gmail.com'
     },
     {
       id: 4,
       name: 'Dr. Emily Davis',
       specialist: 'Child Psychologist',
       photo: image4,
-      fee: 1500
+      fee: 1500,
+      email: 'rajdiponly36@gmail.com'
     },
     {
       id: 5,
       name: 'Dr. Robert White',
       specialist: 'Neuropsychologist',
       photo: image5,
-      fee: 100
+      fee: 100,
+      email: 'rajdiponly36@gmail.com'
     },
     {
       id: 6,
       name: 'Dr. Sarah Miller',
       specialist: 'Sports Psychologist',
       photo: image6,
-      fee: 100
+      fee: 100,
+      email: 'rajdiponly36@gmail.com'
     },
     {
       id: 7,
       name: 'Dr. Michael Brown',
       specialist: 'Forensic Psychologist',
       photo: image7,
-      fee: 100
+      fee: 100,
+      email: 'rajdiponly36@gmail.com'
     },
     {
       id: 8,
       name: 'Dr. Lisa Taylor',
       specialist: 'Health Psychologist',
       photo: image8,
-      fee: 100
+      fee: 100,
+      email: 'rajdiponly36@gmail.com'
     },
     {
       id: 9,
       name: 'Dr. Kevin Turner',
       specialist: 'Educational Psychologist',
       photo: image9,
-      fee: 100
+      fee: 100,
+      email: 'rajdiponly36@gmail.com'
     },
   ];
   
