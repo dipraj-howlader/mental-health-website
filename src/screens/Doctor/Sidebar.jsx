@@ -9,7 +9,7 @@ function Sidebar({openSidebarToggle, OpenSidebar}) {
     <aside id="sidebar" className={openSidebarToggle ? "sidebar-responsive": ""}>
         <div className='sidebar-title'>
             <div className='sidebar-brand'>
-                <BsJournalMedical  className='icon_header'/> SHOP
+                <BsJournalMedical  className='icon_header'/> DOCTOR
             </div>
             <span className='icon close_icon' onClick={OpenSidebar}>X</span>
         </div>
@@ -22,22 +22,17 @@ function Sidebar({openSidebarToggle, OpenSidebar}) {
             </li>
             <li className='sidebar-list-item'>
                 <a href="">
-                    <BsFillArchiveFill className='icon'/> Products
+                    <BsFillArchiveFill className='icon'/> Courses
                 </a>
             </li>
             <li className='sidebar-list-item'>
                 <a href="">
-                    <BsFillGrid3X3GapFill className='icon'/> Categories
+                    <BsFillGrid3X3GapFill className='icon'/> Revenue
                 </a>
             </li>
             <li className='sidebar-list-item'>
                 <a href="">
-                    <BsPeopleFill className='icon'/> Customers
-                </a>
-            </li>
-            <li className='sidebar-list-item'>
-                <a href="">
-                    <BsListCheck className='icon'/> Inventory
+                    <BsPeopleFill className='icon'/> Patient
                 </a>
             </li>
             <li className='sidebar-list-item'>
