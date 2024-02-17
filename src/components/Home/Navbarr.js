@@ -16,11 +16,7 @@ const Navbarr = () => {
                   Professionals
                 </Link>
               </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/appointments">
-                  Appointments
-                </Link>
-              </li>
+
               <li className="nav-item">
                 <Link className="nav-link" to="/courses">
                   Courses
@@ -29,6 +25,11 @@ const Navbarr = () => {
               <li className="nav-item">
                 <Link className="nav-link" to="/services">
                   Services
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/blogs">
+                  Blogs
                 </Link>
               </li>
               <li className="nav-item">

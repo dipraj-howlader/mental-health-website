@@ -13,6 +13,7 @@ import ForgotPassword from './components/LoginAndRegistration/ForgotPassword';
 import DoctorLogin from './components/LoginAndRegistration/DoctorLogin';
 import AdminLogin from './components/LoginAndRegistration/AdminLogin';
 import DoctorDashboard from './screens/Doctor/DoctorDashboard';
+import AdminDashboard from './screens/Admin/AdminDashboard';
 
 
 
@@ -32,6 +33,8 @@ const App = () => {
         <Route path="/doctor-login" element={<DoctorLogin />} />
         <Route path="/admin-login" element={<AdminLogin />} />
         <Route path="/doctor-dashboard" element={<DoctorDashboard />} />
+        <Route path="/admin-dashboard" element={<AdminDashboard />} />
+
        
       </Routes>
     </Router>
