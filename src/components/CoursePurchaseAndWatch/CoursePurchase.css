@@ -1,0 +1,23 @@
+.course-purchase-container {
+    padding: 20px;
+  }
+  
+  .course-details {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+  
+  .course-details h2 {  
+    margin-bottom: 10px;
+  }
+  
+  .course-details p {
+    margin: 0;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  

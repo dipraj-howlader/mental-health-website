@@ -1,0 +1,70 @@
+/* Flexbox layout for the main container */
+.watch-video-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch; /* Stretch items vertically */
+  }
+  
+  /* Styling for the video list */
+  .video-list {
+    width: 40%;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-right: 1px solid #dee2e6; /* Add a border on the right */
+    overflow-y: auto; /* Enable vertical scrolling */
+  }
+  
+  /* Heading style for the video list */
+  .video-list h2 {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    color: #343a40;
+  }
+  
+  /* Style for the list of videos */
+  .video-list ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  /* Styling for individual video titles */
+  .video-list li {
+    cursor: pointer;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    transition: background-color 0.3s ease; /* Smooth transition effect */
+  }
+  
+  /* Hover effect for video titles */
+  .video-list li:hover {
+    background-color: #f0f0f0;
+  }
+  
+  /* Styling for the video player */
+  .video-player {
+    width: 60%;
+    height: 100vh;
+    overflow: hidden;
+    position: relative; /* Enable positioning */
+  }
+  
+  /* Responsive styling for the iframe */
+  .video-player iframe {
+    width: 100%;
+    height: 100%;
+    border: none; /* Remove iframe border */
+  }
+  
+  /* Placeholder text for the video player when no video is selected */
+  .video-player p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5rem;
+    color: #868e96;
+  }
+  

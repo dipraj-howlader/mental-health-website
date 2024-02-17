@@ -1,11 +1,15 @@
 import React from 'react';
 import './CoursesList.css';
-
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../../AuthContext';
 // Import images
 import image1 from '../../images/1.jpg';
 import image2 from '../../images/2.jpg';
 
 const CoursesList = () => {
+  const { currentUser } = useAuth();
+  const navigate = useNavigate();
+
   // Sample course data
   const courses = [
     {
@@ -23,6 +27,16 @@ const CoursesList = () => {
       image: image2,
     }
   ];
+
+  const handlePurchaseCourse = (course) => {
+    if (currentUser) {
+      // User is logged in, navigate to purchase course with course data
+      navigate('/purchase-course', { state: { course } });
+    } else {
+      // User is not logged in, navigate to login
+      navigate('/login');
+    }
+  };
 
   return (
     <div className="container mt-4">
@@ -44,7 +58,7 @@ const CoursesList = () => {
                 ))}
                 {course.rating % 1 !== 0 && <span className="star-half-filled"></span>}
               </div>
-              <button className="btn btn-success btn-buy">Buy</button>
+              <button className="btn btn-success btn-buy" onClick={() => handlePurchaseCourse(course)}>Buy</button>
             </div>
           </div>
         ))}

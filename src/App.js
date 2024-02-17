@@ -14,6 +14,8 @@ import DoctorLogin from './components/LoginAndRegistration/DoctorLogin';
 import AdminLogin from './components/LoginAndRegistration/AdminLogin';
 import DoctorDashboard from './screens/Doctor/DoctorDashboard';
 import AdminDashboard from './screens/Admin/AdminDashboard';
+import CoursePurchase from './components/CoursePurchaseAndWatch/CoursePurchase';
+import WatchVideo from './components/CoursePurchaseAndWatch/WatchVideo';
 
 
 
@@ -34,6 +36,8 @@ const App = () => {
         <Route path="/admin-login" element={<AdminLogin />} />
         <Route path="/doctor-dashboard" element={<DoctorDashboard />} />
         <Route path="/admin-dashboard" element={<AdminDashboard />} />
+        <Route path="/purchase-course" element={<CoursePurchase />} />
+        <Route path="/watch-video" element={<WatchVideo />} />
 
        
       </Routes>
